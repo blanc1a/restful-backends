@@ -3,12 +3,36 @@
 }
 body {
   background-color: #f3f2ef;
+  font-family: "Roboto", sans-serif;
 }
-header {
+.header {
   background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 20px;
 }
+
+.pplAndButton {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+button {
+  all: initial; /* default */
+  margin-left: auto;
+  padding: 0.2rem;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+}
+
 main {
   background-color: white;
+  border-radius: 20px;
 }
 .personContainer {
   background-color: white;
@@ -18,37 +42,33 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding-bottom: 1rem;
   background-size: 100% 22%; /*breite höhe*/
   background-repeat: no-repeat;
+  height: 350px;
+  position: relative;
 }
 
 .contentContainer {
   text-align: center;
-  height: 100%;
+  height: 50%;
+  width: 50%;
+  position: relative;
+  top: 2rem;
 }
 
-.banner {
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* height: 30%; */
-  background-color: aqua;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-img {
+.personImg {
   width: 80px;
   height: 80px;
   object-fit: cover;
   display: block;
   border-radius: 50%;
   margin-top: -40%;
+  /* margin-bottom: -50%; */
   border: 5px solid white;
   position: relative;
-  z-index: 1;
+  left: 3.5rem;
 }
 
 #contacts {
@@ -58,16 +78,44 @@ img {
 
 .mutualConnections::before {
   content: "⚭ ";
-  /* font-size: 1rem; */
 }
 .mutualConnections::after {
   content: " mutual connections";
 }
 
 .btnConnect {
-  padding: 0.2rem;
+  all: initial;
+  color: #0a66c2;
+  background-color: white;
+  border: solid 1.5px #0a66c2;
+  padding: 0.3rem;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
 }
 
 li {
   list-style: none;
+}
+
+.personFont {
+  font-weight: 600;
+}
+.professionFont {
+  color: grey;
+}
+
+.btnClose {
+  /* all: initial; */
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: grey;
+  border: 1px solid grey;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
 }

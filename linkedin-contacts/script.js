@@ -27,34 +27,30 @@ function renderData() {
     let personContainer = document.createElement("div");
     personContainer.classList.add("personContainer");
     list.appendChild(personContainer);
-
-    let banner = document.createElement("div");
-    personContainer.appendChild(banner);
-    let bannerImg = document.createElement("img");
-    banner.classList.add("banner");
-    bannerImg.alt = "Banner Image";
     // banner.style.backgroundImage = `url(${person.backgroundImage})`; //banner einfügen
     personContainer.style.backgroundImage =
       "url(" + person.backgroundImage + ")";
-    banner.appendChild(bannerImg);
-    banner.innerText = "Marek";
 
     let contentContainer = document.createElement("div");
     contentContainer.classList.add("contentContainer");
     personContainer.appendChild(contentContainer);
 
     let personImg = document.createElement("img");
+    personImg.classList.add("personImg");
     contentContainer.appendChild(personImg);
     personImg.src = person.picture;
 
     let title = document.createElement("p");
     contentContainer.appendChild(title);
+    title.classList.add("personFont");
 
     let firstName = document.createElement("p");
     contentContainer.appendChild(firstName);
+    firstName.classList.add("personFont");
 
     let lastName = document.createElement("p");
     contentContainer.appendChild(lastName);
+    firstName.classList.add("personFont");
 
     firstName.innerText =
       person.name.title + " " + person.name.first + " " + person.name.last;
@@ -62,6 +58,7 @@ function renderData() {
     let profession = document.createElement("p");
     contentContainer.appendChild(profession);
     profession.innerText = person.title;
+    profession.classList.add("professionFont");
 
     let mutualConnections = document.createElement("p");
     mutualConnections.classList.add("mutualConnections");
@@ -72,5 +69,10 @@ function renderData() {
     btnConnect.classList.add("btnConnect");
     btnConnect.innerText = "Connect";
     contentContainer.appendChild(btnConnect);
+
+    let btnClose = document.createElement("button");
+    btnClose.classList.add("btnClose");
+    btnClose.innerText = "X";
+    personContainer.appendChild(btnClose);
   }
 }
