@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f3f2ef;
+}
+header {
+  background-color: white;
+}
+main {
+  background-color: white;
+}
+.personContainer {
+  background-color: white;
+  border: solid 0.1rem lightgray;
+  border-radius: 20px;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  background-size: 100% 22%; /*breite höhe*/
+  background-repeat: no-repeat;
+}
+
+.contentContainer {
+  text-align: center;
+  height: 100%;
+}
+
+.banner {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* height: 30%; */
+  background-color: aqua;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  margin-top: -40%;
+  border: 5px solid white;
+  position: relative;
+  z-index: 1;
+}
+
+#contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.mutualConnections::before {
+  content: "⚭ ";
+  /* font-size: 1rem; */
+}
+.mutualConnections::after {
+  content: " mutual connections";
+}
+
+.btnConnect {
+  padding: 0.2rem;
+}
+
+li {
+  list-style: none;
+}

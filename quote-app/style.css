@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-backround: #e0d1bc;
+}
+
+body {
+  margin: 0;
+  background-color: var(--clr-backround);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 2rem 1rem;
+}
+
+h1 {
+  margin-left: 2rem;
+  font-family: "Bowlby One";
+  text-shadow: 4px 4px lightgrey;
+}
+
+#button {
+  margin-left: auto;
+  margin-right: 2rem;
+  font-family: "Bowlby One";
+  box-shadow: 4px 4px lightgrey;
+}
+
+main {
+  padding: 3rem 5rem;
+  height: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

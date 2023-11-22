@@ -1,0 +1,49 @@
+html {
+  box-sizing: border-box;
+  font-family: "Alexandria", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 2rem 1rem;
+}
+
+#hexaCode {
+  /* margin-left: auto; */
+  font-size: 1.5rem;
+}
+
+input#red {
+  /*accent-color => legt die Akzentfarbe für Benutzeroberflächensteuerelemente fest, die von bestimmten Elementen generiert werden*/
+  accent-color: red;
+}
+
+input#green {
+  accent-color: green;
+}
+
+input#blue {
+  accent-color: blue;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+#button {
+  box-shadow: 5px 5px lightgray;
+}
