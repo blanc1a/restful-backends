@@ -1,12 +1,21 @@
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --clr-linkedin: #0a66c2;
+  --clr-white: white;
+  --clr-body: #f3f2ef;
+  --clr-border: lightgray;
+  --clr-font-grey: grey;
+}
+
 body {
-  background-color: #f3f2ef;
+  background-color: var(--clr-body);
   font-family: "Roboto", sans-serif;
 }
 .header {
-  background-color: white;
+  background-color: var(--clr-white);
   display: flex;
   flex-direction: row;
   margin-bottom: 1rem;
@@ -26,17 +35,17 @@ button {
   all: initial; /* default */
   margin-left: auto;
   padding: 0.2rem;
-  background-color: white;
+  background-color: var(--clr-white);
   font-family: "Roboto", sans-serif;
 }
 
 main {
-  background-color: white;
+  background-color: var(--clr-white);
   border-radius: 20px;
 }
 .personContainer {
-  background-color: white;
-  border: solid 0.1rem lightgray;
+  background-color: var(--clr-white);
+  border: solid 0.1rem var(--clr-border);
   border-radius: 20px;
   margin: 0.5rem;
   display: flex;
@@ -66,7 +75,7 @@ main {
   border-radius: 50%;
   margin-top: -40%;
   /* margin-bottom: -50%; */
-  border: 5px solid white;
+  border: 5px solid var(--clr-white);
   position: relative;
   left: 3.5rem;
 }
@@ -74,6 +83,7 @@ main {
 #contacts {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-right: 1.7rem;
 }
 
 .mutualConnections::before {
@@ -85,12 +95,17 @@ main {
 
 .btnConnect {
   all: initial;
-  color: #0a66c2;
-  background-color: white;
-  border: solid 1.5px #0a66c2;
+  color: var(--clr-linkedin);
+  background-color: var(--clr-white);
+  border: solid 1.5px var(--clr-linkedin);
   padding: 0.3rem;
   border-radius: 10px;
   font-family: "Roboto", sans-serif;
+}
+
+.btnConnect:hover {
+  background-color: var(--clr-linkedin);
+  color: var(--clr-white);
 }
 
 li {
@@ -101,7 +116,7 @@ li {
   font-weight: 600;
 }
 .professionFont {
-  color: grey;
+  color: var(--clr-font-grey);
 }
 
 .btnClose {
@@ -111,10 +126,10 @@ li {
   right: 0.5rem;
   height: 1.5rem;
   width: 1.5rem;
-  background-color: grey;
-  border: 1px solid grey;
+  background-color: var(--clr-font-grey);
+  border: 1px solid var(--clr-font-grey);
   border-radius: 50px;
-  color: white;
+  color: var(--clr-white);
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: center;

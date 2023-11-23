@@ -1,5 +1,6 @@
 const contacts = document.querySelector("#contacts");
 
+const apiURL = "https://dummy-apis.netlify.app/api/contact-suggestions?count=";
 const state = {
   persons: [],
 };
@@ -7,7 +8,7 @@ const state = {
 getData();
 
 function getData() {
-  fetch("https://dummy-apis.netlify.app/api/contact-suggestions?count=8") //count auf 8 setzen, um 8 verschiedene daten für personen zu erhalten
+  fetch(apiURL + "8") //count auf 8 setzen, um 8 verschiedene daten für personen zu erhalten
     .then((response) => response.json())
     .then((jsonData) => {
       console.log(jsonData);
@@ -16,10 +17,20 @@ function getData() {
     });
 }
 
+function getSingleContact() {
+  return fetch("https://dummy-apis.netlify.app/api/contact-suggestions?count=1")
+    .then((response) => response.json())
+    .then((jsonData) => {
+      state.persons.push(jsonData[0]);
+      renderData();
+    });
+}
+
 function renderData() {
+  const unorderedList = document.querySelector("ul"); //zugriff auf <ul>
+  unorderedList.innerHTML = "";
   for (let person of state.persons) {
     //for() => sind bereits in dem array, also ab hier mit keys ansprechen
-    const unorderedList = document.querySelector("ul"); //zugriff auf <ul>
 
     let list = document.createElement("li");
     unorderedList.appendChild(list);
@@ -73,6 +84,31 @@ function renderData() {
     let btnClose = document.createElement("button");
     btnClose.classList.add("btnClose");
     btnClose.innerText = "X";
+    btnClose.person = person; //aktueller state an den button gehängt
     personContainer.appendChild(btnClose);
+
+    btnClose.addEventListener("click", changeContact);
+    btnConnect.addEventListener("click", connect);
+  }
+}
+
+let count = 0;
+function connect(event) {
+  const pending = document.querySelector("#pending");
+  if (event.target.innerText === "Connect") {
+    event.target.innerText = "Pending";
+    count++;
+  } else {
+    event.target.innerText = "Connect";
+    count--;
+  }
+  pending.innerText = count + " pending invitations";
+}
+
+function changeContact(event) {
+  const indexToRemove = state.persons.indexOf(event.target.person);
+  if (indexToRemove != -1) {
+    state.persons.splice(indexToRemove, 1);
+    getSingleContact();
   }
 }
